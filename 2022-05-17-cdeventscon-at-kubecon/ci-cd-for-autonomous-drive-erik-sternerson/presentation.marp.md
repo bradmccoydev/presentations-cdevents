@@ -163,53 +163,13 @@ Ideally, we would start the process whenever there is a change anywhere, but we 
 
 "frequently and iteratively integrate components together in increasingly complex compositions"
 
-There is quite a bit to unpack here, so let's go term by term. -->
-
----
-
-# freqently
-
-<!-- TBW -->
-
----
-
-# iteratively
-
-<!-- TBW -->
-
----
-
-# integrate
-
-<!-- TBW -->
-
----
-
-# components
-
-<!-- TBW -->
-
----
-
-# composition
-
-<!-- TBW -->
-
----
-
-# increasingly complex
-
-<!-- TBW -->
-
----
-
-#### "frequently and iteratively integrate components together in increasingly complex compositions"
-
-<!-- With this definition in place, we are now ready to look at how events fit into this picture. -->
-
+With this definition in mind, we are now ready to start talking about events.
+-->
 ---
 
 # Before events
+
+<!-- To bring you on the journey from no events to events, I want to start in the early days before we used events in any way. -->
 
 ---
 <!--
@@ -219,12 +179,167 @@ _class:
 
 # Before events
 
+<!-- While we had a bit of automation in place already, not using events lead to a few inefficiencies of which I want to select three major ones for this talk. Let's list them now and go through them one by one later.-->
+
 * ## Releases => File + e-mail
 
-<!-- Hello -->
+<!-- First, releases were pretty manual and only announced to those you knew wanted to know about it.   -->
 
-* ## Pipelines => Single Jenkins server
+* ## Pipelines => Jenkins server per team
 
-<!-- Hello -->
+<!-- Second, pipelines typically started and ended in the same team, and typically on a quite overloaded Jenkins server -->
 
-* ## Verification results => 
+* ## Verification results => "Known by the team"
+
+<!-- And finally, the way to find the current state of verification was to ask all the teams responsible for producing verification results. -->
+
+---
+
+# Enter events
+
+<!-- So, let's solve these issues one by one, using events. -->
+
+---
+
+# First: Infrastructure
+
+<!-- Before we start sending events, we need a little bit of infrastructure. -->
+
+---
+<!--
+_class:
+ - invert
+-->
+
+# Infrastructure
+
+<!-- When we got started, we put three things in place -->
+
+* ## A vocabulary (created/updated)
+
+<!-- Hard to collaborate using events if everyone has their own event definitions, which NOT incidentally is part of the reasone we are all here in the first place! Go CDEvents! Anyway, we came up with a first simple vocabulary ourselves where events either create or update an object in a database. -->
+
+* ## A transport (RabbitMQ)
+
+<!-- Also hard to collaborate using events if nobody but you know they exist. We set up a RabbitMQ instance. -->
+
+* ## A triggering system (we DIYed it!)
+
+<!-- This last past is not strictly necessary, but we decided to go for one. This is a system that matches events on the transport against a set of user-defined filters. When there is a match, the action connected to the filter is invoked. More on that later. -->
+
+---
+
+# Releases
+
+<!-- Time solve our first issue, letting others know we have made a release. -->
+
+---
+
+<!--
+_class:
+ - invert
+-->
+
+# The release event
+
+<!-- With the infrastructure in place, we can start announcing releases, and we try to include enough information in the event for other systems to be able to not only know that there is a new release of a component or composition, but also to be able to download and use it. -->
+
+- ## Release identifier (UUID)
+
+- ## Release version
+
+- ## File location
+
+---
+
+# Pipelines
+
+<!-- Comment -->
+
+---
+
+<!--
+_class:
+ - invert
+-->
+
+# The activity event
+
+<!-- Comment -->
+
+- ## Activity identifier (UUID)
+
+- ## Chain ID
+
+- ## Result
+
+---
+
+# Verification results
+
+<!-- Comment -->
+
+---
+
+<!--
+_class:
+ - invert
+-->
+
+# The confidence label event
+
+<!-- Comment -->
+
+- ## Release reference
+
+- ## Confidence Label
+
+- ## Result
+
+---
+
+# Events: What do we gain?
+
+<!-- Comment -->
+
+---
+
+# Automation without centralization
+
+<!-- Comment -->
+
+---
+
+# Observability
+
+<!-- Comment -->
+
+---
+
+# Collaboration without causation
+
+<!-- Comment -->
+
+---
+<!--
+_class:
+ - invert
+-->
+
+# What will be better with CDEvents
+
+<!-- Comment -->
+
+* ## Glue code => Interoperability
+
+<!-- Comment   -->
+
+* ## Detours => Proper path
+
+<!-- Comment -->
+
+---
+
+# Collaboration without causation
+
+<!-- Comment -->
