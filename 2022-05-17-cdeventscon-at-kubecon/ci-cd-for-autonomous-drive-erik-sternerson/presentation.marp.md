@@ -162,9 +162,16 @@ Ideally, we would start the process whenever there is a change anywhere, but we 
 <!-- If I was to try to provide a definition for "Our" Continuous Integration, it would be something like
 
 "frequently and iteratively integrate components together in increasingly complex compositions"
-
-With this definition in mind, we are now ready to start talking about events.
 -->
+
+---
+![bg contain](images/our-ci.svg)
+
+<!-- I think it would be fair to say that the official definition of CI and our definition of CI both have similar goals, but exist on different "levels". And thus have somewhat different activities to run and problems to overcome.
+
+With this in mind, we are now ready to start talking about events.
+-->
+
 ---
 
 # Before events
@@ -231,7 +238,7 @@ _class:
 
 # Releases
 
-<!-- Time solve our first issue, letting others know we have made a release. -->
+<!-- Time solve our first issue, which is letting others know we have made a release. -->
 
 ---
 
@@ -251,10 +258,16 @@ _class:
 - ## File location
 
 ---
+![bg contain](images/car-5.svg)
+
+<!-- With the release events, new versions of each of the components and compositions here can be 
+-->
+
+---
 
 # Pipelines
 
-<!-- Comment -->
+<!-- Next we move on to pipelines -->
 
 ---
 
@@ -265,9 +278,9 @@ _class:
 
 # The activity event
 
-<!-- Comment -->
+<!-- With activities in a pipeline, we are mainly interested in what activity we ran and in what context. -->
 
-- ## Activity identifier (UUID)
+- ## Activity name
 
 - ## Chain ID
 
@@ -277,7 +290,7 @@ _class:
 
 # Verification results
 
-<!-- Comment -->
+<!-- Finally we come to one of my favorite topics, having worked in the test automation domain for over a decade: How to make verification results meaningful. -->
 
 ---
 
@@ -288,13 +301,64 @@ _class:
 
 # The confidence label event
 
-<!-- Comment -->
+<!-- We introduce a concept called a confidence label. Actually, when I say "introduce" it would be more fair to say "stole from Eiffel", so this concept may make an appearance in the Eiffel talk from Emil later this afternoon. -->
 
 - ## Release reference
 
 - ## Confidence Label
 
 - ## Result
+
+- ## Links to verification
+
+---
+
+# Hang on ... "confidence label"?
+
+<!-- I think the confidence label concept is way more helpful than it may seem at first glance, so it's worth looking into a little bit more. -->
+
+---
+![bg contain](images/conflabels-1.svg)
+
+<!-- I think my favorite way to look at a confidence label is as a stamp. The label applied by the stamp is something that states something meaningful about our confidence in the quality of the release we stamp the label on.
+-->
+
+---
+![bg contain](images/conflabels-2.svg)
+
+<!-- There will be many different stamps with many different labels, and each component or composition can have labels that are unique to them or shared with others.
+-->
+
+---
+![bg contain](images/conflabels-3.svg)
+
+<!-- We then have one pad of green ink and one pad of red ink, so we can attach positive or negative confidence.
+-->
+
+---
+![bg contain](images/conflabels-4.svg)
+
+<!-- With this, we can go bananas in our component and compositions structure and 
+-->
+
+---
+
+<!--
+_class:
+ - invert
+-->
+
+# Confidence labels
+
+<!-- There are a few reasons I think confidence labels are so powerful -->
+
+* ## Encourages teams to plan and communicate quality
+
+<!-- First, having to put meaningful labels on what automated and manual verification actvities actually verify becomes a powerful tool for structure within a team or department, and for communication between teams and departments. -->
+
+* ## "All verification done" => "The quality I need"
+
+<!-- Second, with the communication  -->
 
 ---
 
@@ -306,19 +370,19 @@ _class:
 
 # Automation without centralization
 
-<!-- Comment -->
+<!-- With events, and especially with a shared vocabulary, we don't need to push or force everyone to use the same CI/CD tools, we only need for them to send events. -->
 
 ---
 
 # Observability
 
-<!-- Comment -->
+<!-- With these events, we get high observability of what is happening in the process, even if we have no idea where that part of the process is being run. -->
 
 ---
 
 # Collaboration without causation
 
-<!-- Comment -->
+<!-- And with this observability comes opportunities to go beyond just seeing what is going on, but actually take automated actions based on events produced by someone else. Way better than waiting for an e-mail! -->
 
 ---
 <!--
@@ -340,6 +404,23 @@ _class:
 
 ---
 
-# Collaboration without causation
+# Thank you!
 
 <!-- Comment -->
+
+---
+<!--
+_footer: 'CDEventsCon | 17.05.2022'
+-->
+
+# Questions?
+
+##
+##
+##
+##
+##
+
+#### Erik Sternerson
+
+###### doWhile / Volvo Cars / Volvo Autonomous Solutions
