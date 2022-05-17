@@ -63,6 +63,12 @@ _class:
 <!-- Comment
 -->
 
+* ## CD/CD for autonomous drive
+
+* ## Transitioning to events
+
+* ## Future
+
 ---
 
 # Building Complex Systems
@@ -364,19 +370,25 @@ _class:
 
 # Events: What do we gain?
 
-<!-- Comment -->
+<!-- Let's look at some benefits we got from using events. -->
 
 ---
 
 # Automation without centralization
 
-<!-- With events, and especially with a shared vocabulary, we don't need to push or force everyone to use the same CI/CD tools, we only need for them to send events. -->
+<!-- With events, and especially with a shared vocabulary, we don't need to push or force everyone to use the same CI/CD tools, we only need for them to send events. So, teams can chose the CI/CD tools that work for best for their use cases. -->
 
 ---
 
 # Observability
 
 <!-- With these events, we get high observability of what is happening in the process, even if we have no idea where that part of the process is being run. -->
+
+---
+![bg contain](images/volvo-vcc-victoria.png)
+
+<!-- This is one use case for observability, called "Follow your commit", which allows you to track all the verification and compositioning your code changes or release has been subjected to.
+-->
 
 ---
 
@@ -392,21 +404,35 @@ _class:
 
 # What will be better with CDEvents
 
-<!-- Comment -->
+<!-- As we are at CDEventsCon today, I would like to connect back to the work done by the CDEvents project and how it will benefit us going forward. -->
 
 * ## Glue code => Interoperability
 
-<!-- Comment   -->
+<!-- We've spend quite a lot of time writing various kinds of glue code to make existing CI/CD tools trigger on and produce events. The CDEvents project actively work with making the CDEvents specification a first-class member of many of these tools, which mean they will work together out of the box.  -->
 
 * ## Detours => Proper path
 
-<!-- Comment -->
+<!-- In "our" CI, we chose a pretty naive approach to our first event vocabulary, and we've since needed to re-write this vocabulary a few times. In CDEvents, from what I've seen, the level of discussions and experience of the people involved, we won't see any such radical re-writes, the spec is already on the proper path.-->
+
+---
+
+# Key takeaways
+
+---
+
+# CI/CD is used outside of code and cloud
+
+---
+
+# Complex / Concrete / Shared
+
+---
+
+# Working on shared solutions
 
 ---
 
 # Thank you!
-
-<!-- Comment -->
 
 ---
 <!--
